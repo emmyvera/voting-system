@@ -1,0 +1,23 @@
+CREATE TABLE `voting_system`.`users_info`
+(   `id` INT(11) NOT NULL AUTO_INCREMENT ,
+    `email` VARCHAR(150) NOT NULL , 
+    `phone` VARCHAR(13) NOT NULL , 
+    `surname` VARCHAR(25) NOT NULL , 
+    `vote_status` BOOLEAN NOT NULL DEFAULT FALSE , 
+    PRIMARY KEY (`id`), UNIQUE `email_inx` (`email`)) 
+    ENGINE = InnoDB;
+
+
+CREATE TABLE `voting_system`.`president_info` 
+(   `id` INT(11) NOT NULL AUTO_INCREMENT , 
+    `name` VARCHAR(75) NOT NULL , 
+    `vote_count` INT(5) NOT NULL DEFAULT '0' , 
+    PRIMARY KEY (`id`), UNIQUE `president_name_inx` (`name`)) 
+    ENGINE = InnoDB;
+
+CREATE TABLE `voting_system`.`vice_president_info` 
+(   `id` INT(11) NOT NULL AUTO_INCREMENT , 
+    `name` VARCHAR(75) NOT NULL , 
+    `vote_count` INT(5) NOT NULL DEFAULT '0' , 
+    PRIMARY KEY (`id`), UNIQUE `vice_pres_inx` (`name`)) 
+    ENGINE = InnoDB;
