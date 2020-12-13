@@ -34,6 +34,21 @@ app.use("/vote", vote)
 const result = require("./routes/result")
 app.use("/result", result)
 
+const admin = require("./routes/admin")
+app.use("/admin", admin)
+
+const adminDashboard = require("./routes/adminDashboard")
+app.use("/adminDashboard", adminDashboard)
+
+const members = require("./routes/members")
+app.use("/members", members)
+
+const candidate = require("./routes/candidate")
+app.use("/candidate", candidate)
+
+const register = require("./routes/register")
+app.use("/register", register)
+
 app.listen(5000, ()=>{
     console.log(`This Webapp is available on port 5000...`)
 })

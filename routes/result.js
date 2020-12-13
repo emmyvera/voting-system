@@ -10,7 +10,7 @@ var vp_vote = []
 var sec_name = []
 var sec_vote = []
 
-pres_state = "Select * From `president_info`"
+    pres_state = "Select * From `president_info`"
 db.query(pres_state, (err, result) => {
     for (let i = 0; i < result.length; i++) {
         pres_name.push(result[i].name)
@@ -38,6 +38,7 @@ db.query(sec_state, (err, result) => {
 })
 
 router.get("/", async(req, res) => {
+
     console.log(pres_vote)
     console.log(vp_vote)
     console.log(sec_vote)
