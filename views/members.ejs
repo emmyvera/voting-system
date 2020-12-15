@@ -93,43 +93,25 @@
                         <table class="table table-hover">
                           <thead>
                             <tr>
-                              <th>User</th>
-                              <th>Product</th>
-                              <th>Sale</th>
-                              <th>Status</th>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Phone</th>
+                              <th>Vote Status</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>Jacob</td>
-                              <td>Photoshop</td>
-                              <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i></td>
-                              <td><label class="badge badge-danger">Pending</label></td>
-                            </tr>
-                            <tr>
-                              <td>Messsy</td>
-                              <td>Flash</td>
-                              <td class="text-danger"> 21.06% <i class="mdi mdi-arrow-down"></i></td>
-                              <td><label class="badge badge-warning">In progress</label></td>
-                            </tr>
-                            <tr>
-                              <td>John</td>
-                              <td>Premier</td>
-                              <td class="text-danger"> 35.00% <i class="mdi mdi-arrow-down"></i></td>
-                              <td><label class="badge badge-info">Fixed</label></td>
-                            </tr>
-                            <tr>
-                              <td>Peter</td>
-                              <td>After effects</td>
-                              <td class="text-success"> 82.00% <i class="mdi mdi-arrow-up"></i></td>
-                              <td><label class="badge badge-success">Completed</label></td>
-                            </tr>
-                            <tr>
-                              <td>Dave</td>
-                              <td>53275535</td>
-                              <td class="text-success"> 98.05% <i class="mdi mdi-arrow-up"></i></td>
-                              <td><label class="badge badge-warning">In progress</label></td>
-                            </tr>
+                            <% for (var i = 0; i < result.length; /* I save the data in a variable 'quotation', I don't know how you named your variable  */  i++) { %>
+                              <tr>
+                                <td><%= result[i].surname %></td>
+                                <td><%= result[i].email %></td>
+                                <td><%= result[i].phone %></td>
+                                <% if(result[i].vote_status == 0){ %>
+                                  <td><label class="badge badge-warning">Not Voted</label></td>
+                                <% } else{ %>
+                                  <td><label class="badge badge-success">Voted</label></td>
+                               <% } %>
+                              </tr>
+                             <% } %>
                           </tbody>
                         </table>
                       </div>
@@ -165,7 +147,7 @@
     <script src="js/misc.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="js/chart.js"></script>
+
     <!-- End custom js for this page -->
   </body>
 </html>

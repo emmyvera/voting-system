@@ -89,28 +89,20 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                       <div class="card-body">
-                        <h4 class="card-title">Default form</h4>
-                        <p class="card-description"> Basic form layout </p>
-                        <form class="forms-sample">
+                        <h4 class="card-title">Member Form</h4>
+                        <p class="card-description">  </p>
+                        <form action="/register/member" method="POST" class="forms-sample">
                           <div class="form-group">
-                            <label for="exampleInputUsername1">Username</label>
-                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                            <label for="exampleInputEmail">Email address</label>
+                            <input name="mEmail" type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
                           </div>
                           <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <label for="exampleInputPhone">Phone</label>
+                            <input name="mPhone" type="phone" class="form-control" id="exampleInputPhone1" placeholder="Phone">
                           </div>
                           <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
-                          </div>
-                          <div class="form-check form-check-flat form-check-primary">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input"> Remember me </label>
+                            <label for="exampleInputSurname">Name</label>
+                            <input name="mName" type="text" class="form-control" id="exampleInputName" placeholder="Name">
                           </div>
                           <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
                           <button class="btn btn-light">Cancel</button>
@@ -122,28 +114,16 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                       <div class="card-body">
-                        <h4 class="card-title">Default form</h4>
-                        <p class="card-description"> Basic form layout </p>
-                        <form class="forms-sample">
+                        <h4 class="card-title">President Form</h4>
+                        <p class="card-description"> Form for aspiring candidate </p>
+                        <form action="/register/president" method="POST" class="forms-sample">
                           <div class="form-group">
-                            <label for="exampleInputUsername1">Username</label>
-                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                            <label for="exampleInputUsername1">Name</label>
+                            <input name="pName" type="text" class="form-control" id="exampleInputpName1" placeholder="Name">
                           </div>
                           <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
-                          </div>
-                          <div class="form-check form-check-flat form-check-primary">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input"> Remember me </label>
+                            <input name="pEmail" type="email" class="form-control" id="exampleInputpEmail" placeholder="Email">
                           </div>
                           <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
                           <button class="btn btn-light">Cancel</button>
@@ -153,70 +133,46 @@
                 </div>
 
                 <div class="col-md-6 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body">
-                        <h4 class="card-title">Default form</h4>
-                        <p class="card-description"> Basic form layout </p>
-                        <form class="forms-sample">
-                          <div class="form-group">
-                            <label for="exampleInputUsername1">Username</label>
-                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
-                          </div>
-                          <div class="form-check form-check-flat form-check-primary">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input"> Remember me </label>
-                          </div>
-                          <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
-                          <button class="btn btn-light">Cancel</button>
-                        </form>
-                      </div>
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Vice President Form</h4>
+                      <p class="card-description"> Form for aspiring candidate </p>
+                      <form action="/register/vicepresident" method="POST" class="forms-sample">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Name</label>
+                          <input name="vpName" type="text" class="form-control" id="exampleInputUsername1" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input name="vpEmail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                        <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
+                      </form>
                     </div>
-                </div>
+                  </div>
+              </div>
 
-                <div class="col-md-6 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body">
-                        <h4 class="card-title">Default form</h4>
-                        <p class="card-description"> Basic form layout </p>
-                        <form class="forms-sample">
-                          <div class="form-group">
-                            <label for="exampleInputUsername1">Username</label>
-                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
-                          </div>
-                          <div class="form-check form-check-flat form-check-primary">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input"> Remember me </label>
-                          </div>
-                          <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
-                          <button class="btn btn-light">Cancel</button>
-                        </form>
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Gen. Secretary Form</h4>
+                    <p class="card-description"> Form for aspiring candidate </p>
+                    <form action="/register/gsecretary" method="POST" class="forms-sample">
+                      <div class="form-group">
+                        <label for="exampleInputUsername1">Name</label>
+                        <input name="gsName" type="text" class="form-control" id="exampleInputgsName1" placeholder="Name">
                       </div>
-                    </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input name="gsEmail" type="email" class="form-control" id="exampleInputgsEmail1" placeholder="Email">
+                      </div>
+                      <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+                      <button class="btn btn-light">Cancel</button>
+                    </form>
+                  </div>
                 </div>
+            </div>
 
             </div>
           </div>

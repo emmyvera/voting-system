@@ -35,7 +35,7 @@
               </a>
             </li>
             <li class="nav-item nav-logout d-none d-lg-block">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="/adminDashboard/logout">
                 <i class="mdi mdi-power"></i>
               </a>
             </li>
@@ -90,7 +90,7 @@
                 <div class="card bg-gradient-danger card-img-holder text-white">
                   <div class="card-body">
                     <h4 class="font-weight-normal mb-3">No of Members</h4>
-                    <h2 class="mb-5">15</h2>
+                    <h2 class="mb-5"><%- result[0][0].member %></h2>
                   </div>
                 </div>
               </div>
@@ -105,8 +105,8 @@
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-success card-img-holder text-white">
                   <div class="card-body">
-                    <h4 class="font-weight-normal mb-3">No of Vote</h4>
-                    <h2 class="mb-5">8</h2>
+                    <h4 class="font-weight-normal mb-3">No Already Voted</h4>
+                    <h2 class="mb-5"><%- result[1][0].no_voted %></h2>
                   </div>
                 </div>
               </div>
@@ -116,16 +116,16 @@
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Bar chart</h4>
-                    <canvas id="barChart0" style="height:230px"></canvas>
+                    <h4 class="card-title">Presidential chart</h4>
+                    <canvas id="barChart0" style="height:300px"></canvas>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Bar chart</h4>
-                    <canvas id="barChart1" style="height:230px"></canvas>
+                    <h4 class="card-title">Vice Presidential chart</h4>
+                    <canvas id="barChart1" style="height:300px"></canvas>
                   </div>
                 </div>
               </div>
@@ -133,14 +133,13 @@
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Bar chart</h4>
-                  <canvas id="barChart2" style="height:230px"></canvas>
+                  <h4 class="card-title">Gen. Secretary chart</h4>
+                  <canvas id="barChart2" style="height:300px"></canvas>
                 </div>
               </div>
             </div>
           </div>
 
-          
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">
@@ -160,7 +159,8 @@
     <script src="vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="vendors/chart.js/Chart.min.js"></script>
+    <!-- <script src="vendors/chart.js/Chart.min.js"></script> -->
+    <script src="js/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="js/off-canvas.js"></script>
@@ -168,7 +168,107 @@
     <script src="js/misc.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="js/chart.js"></script>
+    <!-- For President Vote -->
+    <script>
+      const myVar = <%- JSON.stringify(pres_name); %>;
+        const voteNo = <%- JSON.stringify(pres_vote); %>;
+        var ctx = document.getElementById('barChart0');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: myVar,
+                datasets: [{
+                    data: voteNo,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
+    <!-- For Vice President -->
+    <script>
+      const myVar1 = <%- JSON.stringify(vp_name); %>;
+        const voteNo1 = <%- JSON.stringify(vp_vote); %>;
+        var ctx1 = document.getElementById('barChart1');
+        var myChart = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: myVar1,
+                datasets: [{
+                    data: voteNo1,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
+    <!-- Gen. Secretary -->
+    <script>
+      const myVar2 = <%- JSON.stringify(gs_name); %>;
+        const voteNo2 = <%- JSON.stringify(gs_vote); %>;
+        var ctx2 = document.getElementById('barChart2');
+        var myChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: myVar2,
+                datasets: [{
+                    data: voteNo2,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
     <!-- End custom js for this page -->
   </body>
 </html>

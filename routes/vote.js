@@ -73,21 +73,27 @@ function updateVoteSec(sec){
     }
 }
 
-router.post("/", (req, res) => {
+router.post("/", verify, (req, res) => {
+    //id = req.cookies.auth
+    id = req.id.id
     var pres = req.body.pres
     var vp = req.body.vp
     var sec = req.body.sec
 
+    if (typeof sec === 'undefined' | typeof vp === 'undefined' | typeof pres === 'undefined'){
+        res.redirect("/vote")
+    } else {
     updateVotePres(pres)
     updateVoteVP(vp)
     updateVoteSec(sec)
 
+    upstate = "Update `users_info` Set `vote_status` = 1 Where `id` = ?"
+    db.query(upstate, [id], (err, result) => {
+        console.log("Done!")
+    })
     res.cookie('auth',null)
     res.redirect("/")
-})
-
-router.post("/logout", (req, res) => {
-
+    }
 })
 
 module.exports = router
